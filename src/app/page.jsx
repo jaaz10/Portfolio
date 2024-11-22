@@ -360,7 +360,9 @@ export default async function Home() {
               <Appearance
                 // href="#"
                 // title="In space, no one can watch you stream — until now"
-                description="Hey there! I'm Jaaz, a tech enthusiast from Chicago who's mastering the art of IT at the State Treasurer's Office by day and diving deep into the world of Computer Science at DePaul University by night. When I'm not busy tackling tech challenges or exploring the latest programming paradigms, you can catch me dreaming up my next innovative project over a slice of deep-dish pizza."
+                description="Hey! I'm Jaaz - by day I work in IT at the State Treasurer's Office in Chicago, 
+                and by night I'm pursuing my Computer Science degree at DePaul. When I'm not knee-deep in code or studying, 
+                you'll probably find me sketching out new project ideas over Chicago's finest deep-dish pizza."
                 // event="SysConf 2021"
                 // cta="../images/avatar.jpg"
               />
