@@ -40,7 +40,7 @@ const projects = [
     logo: logoHelioStream,
   },
   {
-    name: 'ManaMaths App',
+    name: 'ManaMaths Appy',
     description:
       'Track life totals, counters, and stats with ease and simplcity in your Magic: The Gathering games.',
     link: { href: '#', label: 'manamaths.com' },
