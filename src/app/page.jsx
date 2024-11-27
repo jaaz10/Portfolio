@@ -38,6 +38,7 @@ const projects = [
     description: 'Brick and mortar optician in the heart of the Clearing neighborhood serving since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoHelioStream,
+    technologies: ['Wordpress','Custom WP plugins'],
   },
   {
     name: 'ManaMaths App',
@@ -51,7 +52,6 @@ const projects = [
     description:
       'Connect with local soccer enthusiasts and easily find or organize pickup games near you.',
     link: { href: '#', label: 'kickoff.com' },
-    logo: logoAnimaginary,
     logo: logoAnimaginary,
   },
 ]
