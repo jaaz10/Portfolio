@@ -168,7 +168,7 @@ function DesktopNavigation(props) {
         <NavItem href="/">Home</NavItem>
         <NavItem href="https://github.com/jaaz10" target="_blank">Github</NavItem>
         <NavItem href="https://www.linkedin.com/in/jaazespinoza/" target="_blank">LinkedIn</NavItem>
-        <NavItem href="https://docs.google.com/document/d/1BepaUbxvHAmzeNf05XeFVCTugZ-Go_CeP7hr1MATtbQ/edit?usp=sharing" target="_blank">Resume</NavItem>
+        <NavItem href="https://drive.google.com/file/d/1KR0d9ryhZ4qUF6hfk5zbJCNmJwZH6r6i/view?usp=drive_link" target="_blank">Resume</NavItem>
         {/* <NavItem href="/uses">Uses</NavItem> */}
       </ul>
     </nav>
