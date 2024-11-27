@@ -474,6 +474,8 @@ export default async function Home() {
     </Card>
   ))}
 </div>
+          </ul>
+        </div>
         <SpeakingSection title="Contact">
           <Appearance
             // href="#"
