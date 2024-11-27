@@ -328,6 +328,23 @@ function Photos() {
   )
 }
 
+function getTechColor(tech) {
+  // Frontend/Mobile
+  if (tech.toLowerCase().includes('react') || 
+      tech.toLowerCase().includes('expo') ||
+      tech.toLowerCase().includes('wordpress')) {
+    return "bg-sky-100 text-sky-800 dark:bg-sky-800/30 dark:text-sky-300 border-sky-200 dark:border-sky-800/50"
+  }
+  // Backend/Database
+  if (tech.toLowerCase().includes('firebase') || 
+      tech.toLowerCase().includes('mongodb') ||
+      tech.toLowerCase().includes('node')) {
+    return "bg-amber-100 text-amber-800 dark:bg-amber-800/30 dark:text-amber-300 border-amber-200 dark:border-amber-800/50"
+  }
+  // Custom/Other
+  return "bg-purple-100 text-purple-800 dark:bg-purple-800/30 dark:text-purple-300 border-purple-200 dark:border-purple-800/50"
+}
+
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
 
@@ -459,7 +476,7 @@ export default async function Home() {
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="inline-flex items-center rounded-md bg-teal-100 px-2.5 py-0.5 text-xs font-medium text-teal-800 dark:bg-teal-800 dark:text-teal-100 border border-teal-200 dark:border-teal-700"
+                className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border ${getTechColor(tech)}`}
               >
                 {tech}
               </span>
