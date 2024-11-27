@@ -362,9 +362,10 @@ export default async function Home() {
                 // href="#"
                 // title="In space, no one can watch you stream — until now"
                 description="Hey! I'm Jaaz - by day I work in tech at the State Treasurer's Office in Chicago, 
-                and by night I'm pursuing my Computer Science degree at DePaul. When I'm not knee-deep in code, 
-                studying, or helping people fix their IT headaches, you can find me either on the soccer field or 
-                unwinding with my favorite video games."
+
+                and by night I'm pursuing my CS degree at DePaul. When I'm not knee-deep in schoolwork, 
+                I'm helping users fix their IT headaches. You can find me either playing with my pups or 
+                hanging out with family and friends."
                 // event="SysConf 2021"
                 // cta="../images/avatar.jpg"
               />
