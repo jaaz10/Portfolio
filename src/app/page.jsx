@@ -39,7 +39,7 @@ const projects = [
     logo: logoFacebook,
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoHelioStream,
-    technologies: ['Wordpress','Custom WP plugins'],
+    technologies: ['Wordpress', 'Custom WP plugins'],
   },
   {
     name: 'ManaMaths App',
@@ -47,6 +47,7 @@ const projects = [
       'Track life totals, counters, and stats with ease and simplcity in your Magic: The Gathering games.',
     link: { href: '#', label: 'manamaths.com' },
     logo: logoOpenShuttle,
+    technologies: ['React Native', 'Expo', 'Firebase'],
   },
   {
     name: 'Kickoff App',
@@ -54,6 +55,7 @@ const projects = [
       'Connect with local soccer enthusiasts and easily find or organize pickup games near you.',
     link: { href: '#', label: 'kickoff.com' },
     logo: logoAnimaginary,
+    technologies: ['React Native', 'Expo', 'Firebase'],
   },
 ]
 
@@ -415,6 +417,7 @@ export default async function Home() {
             <Resume />
           </div>
         </div>
+
         <div className="mt-5 grid grid-cols-1">
           <ul
             role="list"
@@ -432,28 +435,42 @@ export default async function Home() {
               </div>
             </section>
 
+            {/* Projects */}
             <div className="sm:col-span-23  grid gap-10 sm:grid-cols-1 lg:grid-cols-3">
               {projects.map((project) => (
                 <Card as="li" className="w-full " key={project.name}>
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                    <Image
-                      src={project.logo}
-                      alt=""
-                      className="h-8 w-8"
-                      unoptimized
-                    />
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                  <Image
+                    src={project.logo}
+                    alt=""
+                    className="h-8 w-8"
+                    unoptimized
+                  />
+                </div>
+                <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                  <Card.Link href={project.link.href}>
+                    {project.name}
+                  </Card.Link>
+                </h2>
+                <Card.Description>{project.description}</Card.Description>
+                {/* Add this new section */}
+                {project.technologies && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="inline-flex items-center rounded-md bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                  <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                    <Card.Link href={project.link.href}>
-                      {project.name}
-                    </Card.Link>
-                  </h2>
-                  <Card.Description>{project.description}</Card.Description>
-                  <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                    <LinkIcon className="h-6 w-6 flex-none" />
-                    <span className="ml-2">{project.link.label}</span>
-                  </p>
-                </Card>
+                )}
+                <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                  <LinkIcon className="h-6 w-6 flex-none" />
+                  <span className="ml-2">{project.link.label}</span>
+                </p>
+              </Card>
               ))}
             </div>
           </ul>
