@@ -453,13 +453,13 @@ export default async function Home() {
         </Card.Link>
       </h2>
       <Card.Description>{project.description}</Card.Description>
-      <div className="relative z-10"> {/* Add this wrapper */}
+      <div className="relative z-10">
         {project.technologies && (
           <div className="mt-4 flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="inline-flex items-center rounded-md bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700"
+                className="inline-flex items-center rounded-md bg-teal-100 px-2.5 py-0.5 text-xs font-medium text-teal-800 dark:bg-teal-800 dark:text-teal-100 border border-teal-200 dark:border-teal-700"
               >
                 {tech}
               </span>
