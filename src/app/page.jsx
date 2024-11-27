@@ -273,7 +273,7 @@ function Resume() {
     {
       company: 'SDI Presence',
       title: 'Desktop Support Specialist Intern',
-      logo: logoPlanetaria,
+      logo: logoFacebook,
       start: '2021',
       end: '2022',
     },
