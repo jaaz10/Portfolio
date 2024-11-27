@@ -36,6 +36,7 @@ const projects = [
   {
     name: 'Clearing Vision Website',
     description: 'Brick and mortar optician in the heart of the Clearing neighborhood serving since 2010.',
+    logo: logoFacebook,
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoHelioStream,
     technologies: ['Wordpress','Custom WP plugins'],
