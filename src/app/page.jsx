@@ -36,7 +36,6 @@ const projects = [
   {
     name: 'Clearing Vision Website',
     description: 'Brick and mortar optician in the heart of the Clearing neighborhood serving since 2010.',
-    logo: logoFacebook,
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoHelioStream,
     technologies: ['Wordpress', 'Custom WP plugins'],
@@ -472,16 +471,19 @@ export default async function Home() {
       <Card.Description>{project.description}</Card.Description>
       <div className="relative z-10">
         {project.technologies && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border ${getTechColor(tech)}`}
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+          <>
+            <p className="mt-4 mb-2 text-sm text-zinc-600 dark:text-zinc-400">Technologies used:</p>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border ${getTechColor(tech)}`}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </>
         )}
       </div>
       <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
