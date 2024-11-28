@@ -370,7 +370,7 @@ export default async function Home() {
         </div>
       </Container>
       {/* <Photos /> */}
-      <Container className="mt-20 md:mt-1">
+      <Container className="mt-20 md:mt-1 max-w-8xl">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-12">
             <SpeakingSection title="About">
@@ -429,7 +429,7 @@ export default async function Home() {
             className="mb-10 mt-5 grid w-full grid-cols-1 gap-y-16 sm:mx-auto sm:w-full sm:grid-cols-1  md:w-[576px] md:grid-cols-[137px_1fr] md:border-l md:border-zinc-100 md:pl-6 lg:w-full lg:grid-cols-[120px_1fr] md:dark:border-zinc-700/40"
           >
             <section aria-labelledby="someProjects" className="">
-              <div className="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
+              <div className="grid max-w-7xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
                 <h2
                   id="someProjects"
                   className="text-sm font-semibold text-zinc-800 dark:text-zinc-100"
@@ -441,9 +441,12 @@ export default async function Home() {
             </section>
 
             {/* Projects */}
-            <div className="sm:col-span-23 grid gap-10 sm:grid-cols-1 lg:grid-cols-3">
+            <div className="sm:col-span-23 grid gap-8 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 w-full">
               {projects.map((project) => (
-                <div key={project.name} className="p-6 rounded-2xl border border-zinc-100 dark:border-zinc-700/40 h-full">
+                <div 
+                  key={project.name} 
+                  className="p-6 rounded-2xl border border-zinc-100 dark:border-zinc-700/40 h-full bg-white dark:bg-zinc-800/90"
+                >
                   <ProjectCard 
                     project={project} 
                     projectDetails={projectDetails}

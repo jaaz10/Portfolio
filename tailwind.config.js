@@ -24,6 +24,11 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     typography: typographyStyles,
+    extend: {
+      maxWidth: {
+        '8xl': '88rem',
+      }
+    }
   },
   extend: {
     keyframes: {
