@@ -377,11 +377,10 @@ export default async function Home() {
               <Appearance
                 // href="#"
                 // title="In space, no one can watch you stream — until now"
-                description="Hey! I'm Jaaz - by day I work in tech at the State Treasurer's Office in Chicago, 
-
+                description="Hey! I'm Jaaz - by day I work in IT at the State Treasurer's Office in Chicago, 
                 and by night I'm pursuing my CS degree at DePaul. When I'm not knee-deep in schoolwork or
-                helping users fix their IT headaches, you can find me either playing with my pups or 
-                hanging out with family and friends."
+                helping users fix their IT headaches, you can find me either messing with my HomeLab or 
+                coding up some new side project."
                 // event="SysConf 2021"
                 // cta="../images/avatar.jpg"
               />
