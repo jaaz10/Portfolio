@@ -370,7 +370,7 @@ export default async function Home() {
         </div>
       </Container>
       {/* <Photos /> */}
-      <Container className="mt-20 md:mt-1">
+      <Container className="mt-10 md:mt-1">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-12">
             <SpeakingSection title="About">
