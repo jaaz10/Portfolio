@@ -464,9 +464,7 @@ export default async function Home() {
         />
       </div>
       <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-        <a href={project.link.href} className="hover:text-teal-500 cursor-pointer">
-          {project.name}
-        </a>
+        {project.name}
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{project.description}</p>
       <div className="relative z-10">
@@ -491,7 +489,7 @@ export default async function Home() {
       <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 dark:text-zinc-200">
         <LinkIcon className="h-6 w-6 flex-none" />
         <a href={project.link.href} className="ml-2 hover:text-teal-500 cursor-pointer">
-          {project.link.label}
+          Visit Website →
         </a>
       </p>
     </div>
