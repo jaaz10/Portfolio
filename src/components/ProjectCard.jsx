@@ -44,7 +44,7 @@ export function ProjectCard({ project, projectDetails }) {
         <Image src={project.logo} alt="" className="h-8 w-8" unoptimized />
       </div>
 
-      <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+      <h2 className="mt-4 text-base font-semibold text-zinc-800 dark:text-zinc-100">
         {project.name}
       </h2>
 
@@ -116,6 +116,34 @@ export function ProjectCard({ project, projectDetails }) {
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
                 {details?.fullDescription}
               </p>
+            </div>
+
+            {/* Placeholder images for website snapshots */}
+            <div className="mt-4 grid grid-cols-1 gap-4">
+              <h3 className="text-md font-semibold text-zinc-800 dark:text-zinc-100">Website Snapshots</h3>
+              <div className="flex flex-wrap gap-2">
+                <Image 
+                  src="/path/to/placeholder-image1.jpg" // Replace with actual image paths
+                  alt="Snapshot 1"
+                  className="rounded-lg shadow-md"
+                  width={300}
+                  height={200}
+                />
+                <Image 
+                  src="/path/to/placeholder-image2.jpg" // Replace with actual image paths
+                  alt="Snapshot 2"
+                  className="rounded-lg shadow-md"
+                  width={300}
+                  height={200}
+                />
+                <Image 
+                  src="/path/to/placeholder-image3.jpg" // Replace with actual image paths
+                  alt="Snapshot 3"
+                  className="rounded-lg shadow-md"
+                  width={300}
+                  height={200}
+                />
+              </div>
             </div>
           </Dialog.Panel>
         </div>
