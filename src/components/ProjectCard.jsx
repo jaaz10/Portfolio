@@ -39,7 +39,11 @@ export function ProjectCard({ project, projectDetails }) {
   const details = projectDetails[project.name]
 
   return (
-    <div className="w-full flex flex-col h-full">
+    <div 
+      className="w-full flex flex-col h-full group" 
+      onMouseEnter={() => setIsModalOpen(true)}
+      onMouseLeave={() => setIsModalOpen(false)}
+    >
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={project.logo} alt="" className="h-8 w-8" unoptimized />
       </div>
@@ -77,13 +81,6 @@ export function ProjectCard({ project, projectDetails }) {
         >
           Visit Website →
         </a>
-        
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="text-sm font-medium text-teal-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-        >
-          More Info →
-        </button>
       </div>
 
       <Dialog 
