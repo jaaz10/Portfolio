@@ -38,7 +38,7 @@ export function ProjectCard({ project, projectDetails }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col h-full">
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={project.logo} alt="" className="h-8 w-8" unoptimized />
       </div>
@@ -47,15 +47,18 @@ export function ProjectCard({ project, projectDetails }) {
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{project.description}</p>
       
-      <div className="relative z-10">
+      <div className="relative z-10 mt-4">
         {project.technologies && (
           <>
-            <p className="mt-6 mb-2 text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+            <p className="mb-2 text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
               Technologies used:
             </p>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
-                <span key={tech} className={`px-2 py-1 rounded-full ${getTechColor(tech)}`}>
+                <span
+                  key={tech}
+                  className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border ${getTechColor(tech)}`}
+                >
                   {tech}
                 </span>
               ))}
@@ -63,6 +66,30 @@ export function ProjectCard({ project, projectDetails }) {
           </>
         )}
       </div>
+
+      <div className="relative z-10 mt-auto pt-6 flex items-center justify-between">
+        <a 
+          href={project.link.href} 
+          className="text-sm font-medium text-zinc-400 hover:text-teal-500 dark:text-zinc-200 transition-colors"
+        >
+          Visit Website →
+        </a>
+        
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="text-sm font-medium text-teal-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+        >
+          More Info →
+        </button>
+      </div>
+
+      <Dialog
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        className="relative z-50"
+      >
+        {/* ... rest of your Dialog content ... */}
+      </Dialog>
     </div>
   )
 } 

@@ -44,7 +44,7 @@ const projects = [
     description: 'A professional website for a Chicago-based optician serving the Clearing area since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
-    technologies: ['WordPress', 'Custom WordPress Plugins', 'PHP', 'MySQL'],
+    technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
     name: 'MapleRescue',
@@ -443,11 +443,12 @@ export default async function Home() {
             {/* Projects */}
             <div className="sm:col-span-23 grid gap-10 sm:grid-cols-1 lg:grid-cols-3">
               {projects.map((project) => (
-                <ProjectCard 
-                  key={project.name} 
-                  project={project} 
-                  projectDetails={projectDetails}
-                />
+                <div key={project.name} className="p-6 rounded-2xl border border-zinc-100 dark:border-zinc-700/40 h-full">
+                  <ProjectCard 
+                    project={project} 
+                    projectDetails={projectDetails}
+                  />
+                </div>
               ))}
             </div>
           </ul>
