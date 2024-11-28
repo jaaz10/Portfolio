@@ -78,12 +78,13 @@ export function ProjectCard({ project, projectDetails }) {
           Visit Website →
         </a>
         
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="text-sm font-medium text-teal-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+        <div
+          onMouseEnter={() => setIsModalOpen(true)}
+          onMouseLeave={() => setIsModalOpen(false)}
+          className="text-sm font-medium text-zinc-400 hover:text-teal-500 dark:text-zinc-200 transition-colors cursor-pointer"
         >
-          More Info →
-        </button>
+          Hover for details →
+        </div>
       </div>
 
       <Dialog 
