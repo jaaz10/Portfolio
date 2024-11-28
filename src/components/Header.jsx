@@ -176,6 +176,7 @@ function MobileNavigation(props) {
 
 function NavItem({ href, children, icon: Icon, tooltip }) {
   let isActive = usePathname() === href
+  let isExternal = href.startsWith('http')
 
   return (
     <li className="relative group">
@@ -187,6 +188,10 @@ function NavItem({ href, children, icon: Icon, tooltip }) {
             ? 'text-teal-500 dark:text-teal-400'
             : 'hover:text-teal-500 dark:hover:text-teal-400'
         )}
+        {...isExternal ? {
+          target: "_blank",
+          rel: "noopener noreferrer"
+        } : {}}
       >
         {Icon ? (
           <Icon className="h-6 w-6 fill-current" />
