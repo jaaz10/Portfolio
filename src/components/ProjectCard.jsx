@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Dialog } from '@/components/Dialog'
+import { Dialog } from '@headlessui/react'
 
 function getTechColor(tech) {
   // Frontend Technologies
@@ -36,6 +36,7 @@ function getTechColor(tech) {
 
 export function ProjectCard({ project, projectDetails }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const details = projectDetails[project.name]
 
   return (
     <div className="w-full flex flex-col h-full">
@@ -47,10 +48,10 @@ export function ProjectCard({ project, projectDetails }) {
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{project.description}</p>
       
-      <div className="relative z-10 mt-4">
+      <div className="relative z-10">
         {project.technologies && (
           <>
-            <p className="mb-2 text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+            <p className="mt-6 mb-2 text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
               Technologies used:
             </p>
             <div className="flex flex-wrap gap-2">
@@ -70,6 +71,8 @@ export function ProjectCard({ project, projectDetails }) {
       <div className="relative z-10 mt-auto pt-6 flex items-center justify-between">
         <a 
           href={project.link.href} 
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-sm font-medium text-zinc-400 hover:text-teal-500 dark:text-zinc-200 transition-colors"
         >
           Visit Website →
@@ -83,12 +86,99 @@ export function ProjectCard({ project, projectDetails }) {
         </button>
       </div>
 
-      <Dialog
-        open={isModalOpen}
+      <Dialog 
+        open={isModalOpen} 
         onClose={() => setIsModalOpen(false)}
         className="relative z-50"
       >
-        {/* ... rest of your Dialog content ... */}
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" aria-hidden="true" />
+        
+        <div className="fixed inset-0 flex items-center justify-center p-4">
+          <Dialog.Panel className="mx-auto max-w-2xl rounded-xl bg-white p-6 shadow-lg dark:bg-zinc-800/90">
+            <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-700/40 pb-3">
+              <Dialog.Title className="text-base sm:text-lg font-medium text-zinc-900 dark:text-zinc-100">
+                {project.name}
+              </Dialog.Title>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="rounded-full p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700/60"
+                aria-label="Close"
+              >
+                <svg className="h-5 w-5 text-zinc-500" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="mt-4 space-y-6 overflow-y-auto max-h-[calc(100vh-8rem)]">
+              <div className="flex items-center space-x-4">
+                <div className="flex-shrink-0">
+                  <Image 
+                    src={project.logo} 
+                    alt="" 
+                    className="h-12 w-12" 
+                    unoptimized 
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border ${getTechColor(tech)}`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  Overview
+                </h3>
+                <div className="mt-2 prose prose-sm dark:prose-invert">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 whitespace-pre-line">
+                    {details.fullDescription}
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  Challenges
+                </h3>
+                <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 whitespace-pre-line">
+                  {details.challenges}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  Outcome
+                </h3>
+                <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 whitespace-pre-line">
+                  {details.outcome}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-zinc-100 dark:border-zinc-700/40">
+                <a
+                  href={project.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-4 py-2 text-sm font-medium text-white bg-teal-500 rounded-md hover:bg-teal-600 dark:hover:bg-teal-400 transition-colors"
+                >
+                  Visit Website
+                  <svg className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </Dialog.Panel>
+        </div>
       </Dialog>
     </div>
   )
