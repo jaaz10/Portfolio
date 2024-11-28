@@ -498,11 +498,14 @@ export default async function Home() {
         </div>
         <SpeakingSection title="Contact">
           <Appearance
-            // href="#"
-            // title="In space, no one can watch you stream — until now"
-            description="jaazespinoza@gmail.com"
-            // event="SysConf 2021"
-            // cta="../images/avatar.jpg"
+            description={
+              <a 
+                href="mailto:jaazespinoza@gmail.com"
+                className="hover:text-teal-500 transition-colors"
+              >
+                jaazespinoza@gmail.com
+              </a>
+            }
           />
         </SpeakingSection>
       </Container>
