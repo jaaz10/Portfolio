@@ -452,10 +452,9 @@ export default async function Home() {
             </section>
 
             {/* Projects */}
-            <div className="sm:col-span-23 grid gap-10 sm:grid-cols-1 lg:grid-cols-3 animate-fade-in">
+            <div className="sm:col-span-23 grid gap-10 sm:grid-cols-1 lg:grid-cols-3">
   {projects.map((project) => (
-    <Card as="li" className="w-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-zinc-700/25" key={project.name}>
-      <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
+    <Card as="li" className="w-full" key={project.name}>
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image
           src={project.logo}
@@ -465,10 +464,7 @@ export default async function Home() {
         />
       </div>
       <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-        <Card.Link 
-          href={project.link.href}
-          className="transition-colors duration-300 hover:text-teal-500 dark:hover:text-teal-400"
-        >
+        <Card.Link href={project.link.href}>
           {project.name}
         </Card.Link>
       </h2>
@@ -483,9 +479,7 @@ export default async function Home() {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border 
-                    transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm
-                    ${getTechColor(tech)}`}
+                  className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border ${getTechColor(tech)}`}
                 >
                   {tech}
                 </span>
