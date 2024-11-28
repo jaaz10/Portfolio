@@ -472,7 +472,9 @@ export default async function Home() {
       <div className="relative z-10">
         {project.technologies && (
           <>
-            <p className="mt-4 mb-2 text-sm text-zinc-600 dark:text-zinc-400">Technologies used:</p>
+            <p className="mt-6 mb-2 text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+              Technologies used:
+            </p>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
