@@ -39,18 +39,18 @@ export function ProjectCard({ project, projectDetails }) {
   const details = projectDetails[project.name]
 
   return (
-    <div 
-      className="w-full flex flex-col h-full group" 
-      onMouseEnter={() => setIsModalOpen(true)}
-      onMouseLeave={() => setIsModalOpen(false)}
-    >
+    <div className="w-full flex flex-col h-full">
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={project.logo} alt="" className="h-8 w-8" unoptimized />
       </div>
+
       <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
         {project.name}
       </h2>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{project.description}</p>
+
+      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        {project.description}
+      </p>
       
       <div className="relative z-10">
         {project.technologies && (
@@ -81,6 +81,13 @@ export function ProjectCard({ project, projectDetails }) {
         >
           Visit Website →
         </a>
+        
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="text-sm font-medium text-teal-500 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+        >
+          More Info →
+        </button>
       </div>
 
       <Dialog 
@@ -89,7 +96,7 @@ export function ProjectCard({ project, projectDetails }) {
         className="relative z-50"
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-        
+
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel className="w-full max-w-2xl rounded-xl bg-white p-6 shadow-lg dark:bg-zinc-800/90">
             <div className="flex items-center justify-between">
