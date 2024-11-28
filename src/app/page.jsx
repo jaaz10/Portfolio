@@ -328,20 +328,20 @@ function Photos() {
 }
 
 function getTechColor(tech) {
-  // Frontend/Mobile
-  if (tech.toLowerCase().includes('react') || 
-      tech.toLowerCase().includes('expo') ||
-      tech.toLowerCase().includes('wordpress')) {
-    return "bg-sky-100 text-sky-800 dark:bg-sky-800/30 dark:text-sky-300 border-sky-200 dark:border-sky-800/50"
+  // Frontend
+  if (tech.toLowerCase().includes('react') || tech.toLowerCase().includes('wordpress')) {
+    return "bg-sky-100 text-sky-800 dark:bg-sky-800/30 dark:text-sky-300 border-sky-200 dark:border-sky-800/50 hover:bg-sky-200 dark:hover:bg-sky-800/40"
+  }
+  // Mobile
+  if (tech.toLowerCase().includes('expo')) {
+    return "bg-violet-100 text-violet-800 dark:bg-violet-800/30 dark:text-violet-300 border-violet-200 dark:border-violet-800/50 hover:bg-violet-200 dark:hover:bg-violet-800/40"
   }
   // Backend/Database
-  if (tech.toLowerCase().includes('firebase') || 
-      tech.toLowerCase().includes('mongodb') ||
-      tech.toLowerCase().includes('node')) {
-    return "bg-amber-100 text-amber-800 dark:bg-amber-800/30 dark:text-amber-300 border-amber-200 dark:border-amber-800/50"
+  if (tech.toLowerCase().includes('firebase')) {
+    return "bg-amber-100 text-amber-800 dark:bg-amber-800/30 dark:text-amber-300 border-amber-200 dark:border-amber-800/50 hover:bg-amber-200 dark:hover:bg-amber-800/40"
   }
   // Custom/Other
-  return "bg-purple-100 text-purple-800 dark:bg-purple-800/30 dark:text-purple-300 border-purple-200 dark:border-purple-800/50"
+  return "bg-emerald-100 text-emerald-800 dark:bg-emerald-800/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50 hover:bg-emerald-200 dark:hover:bg-emerald-800/40"
 }
 
 export default async function Home() {
@@ -452,9 +452,10 @@ export default async function Home() {
             </section>
 
             {/* Projects */}
-            <div className="sm:col-span-23 grid gap-10 sm:grid-cols-1 lg:grid-cols-3">
+            <div className="sm:col-span-23 grid gap-10 sm:grid-cols-1 lg:grid-cols-3 animate-fade-in">
   {projects.map((project) => (
-    <Card as="li" className="w-full" key={project.name}>
+    <Card as="li" className="w-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-zinc-700/25" key={project.name}>
+      <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image
           src={project.logo}
@@ -464,7 +465,10 @@ export default async function Home() {
         />
       </div>
       <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-        <Card.Link href={project.link.href}>
+        <Card.Link 
+          href={project.link.href}
+          className="transition-colors duration-300 hover:text-teal-500 dark:hover:text-teal-400"
+        >
           {project.name}
         </Card.Link>
       </h2>
@@ -479,7 +483,9 @@ export default async function Home() {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border ${getTechColor(tech)}`}
+                  className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-medium border 
+                    transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm
+                    ${getTechColor(tech)}`}
                 >
                   {tech}
                 </span>
