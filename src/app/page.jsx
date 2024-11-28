@@ -32,29 +32,33 @@ import logoOpenShuttle from '@/images/logos/mana.svg'
 import { getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
+import logoOptician from '@/images/logos/optician.svg'      // Eye care/optician related
+import logoRescue from '@/images/logos/paw.svg'            // Pet/animal rescue related
+import logoOnboarding from '@/images/logos/onboarding.svg'  // HR/onboarding related
+
 const projects = [
   {
     name: 'Clearing Vision Website',
-    description: 'Brick and mortar optician in the heart of the Clearing neighborhood serving since 2010.',
+    description: 'A professional website for a Chicago-based optician serving the Clearing area since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
-    logo: logoHelioStream,
-    technologies: ['Wordpress', 'Custom WP plugins'],
+    logo: logoOptician,
+    technologies: ['WordPress', 'Custom WordPress Plugins', 'PHP', 'MySQL'],
   },
   {
-    name: 'ManaMaths App',
+    name: 'MapleRescue',
     description:
-      'Track life totals, counters, and stats with ease and simplcity in your Magic: The Gathering games.',
-    link: { href: '#', label: 'manamaths.com' },
-    logo: logoOpenShuttle,
-    technologies: ['React Native', 'Expo', 'Firebase'],
+      'A web platform that helps pet rescue groups coordinate foster homes, transport, and medical records. This tool simplifies rescue operations through smart matching and resource sharing features.',
+    link: { href: '#', label: 'maplerescue.org' },
+    logo: logoRescue,
+    technologies: ['React', 'Material UI', 'Python + Django', 'PostgreSQL'],
   },
   {
-    name: 'Kickoff App',
+    name: 'Onboardly',
     description:
-      'Connect with local soccer enthusiasts and easily find or organize pickup games near you.',
-    link: { href: '#', label: 'kickoff.com' },
-    logo: logoAnimaginary,
-    technologies: ['React Native', 'Expo', 'Firebase'],
+      'An automated IT onboarding system that streamlines new employee setup processes.',
+    link: { href: '#', label: 'onboardly.com' },
+    logo: logoOnboarding,
+    technologies: ['Java + Spring Boot', 'Firebase', 'JUnit', 'Docker'],
   },
 ]
 
@@ -328,20 +332,33 @@ function Photos() {
 }
 
 function getTechColor(tech) {
-  // Frontend
-  if (tech.toLowerCase().includes('react') || tech.toLowerCase().includes('wordpress')) {
+  // Frontend Technologies
+  if (['react', 'wordpress', 'material ui'].some(t => tech.toLowerCase().includes(t))) {
     return "bg-sky-100 text-sky-800 dark:bg-sky-800/30 dark:text-sky-300 border-sky-200 dark:border-sky-800/50 hover:bg-sky-200 dark:hover:bg-sky-800/40"
   }
-  // Mobile
-  if (tech.toLowerCase().includes('expo')) {
-    return "bg-violet-100 text-violet-800 dark:bg-violet-800/30 dark:text-violet-300 border-violet-200 dark:border-violet-800/50 hover:bg-violet-200 dark:hover:bg-violet-800/40"
+
+  // Backend Technologies
+  if (['python', 'django', 'java', 'spring boot'].some(t => tech.toLowerCase().includes(t))) {
+    return "bg-emerald-100 text-emerald-800 dark:bg-emerald-800/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50 hover:bg-emerald-200 dark:hover:bg-emerald-800/40"
   }
-  // Backend/Database
-  if (tech.toLowerCase().includes('firebase')) {
+
+  // Database Technologies
+  if (['mysql', 'postgresql', 'firebase'].some(t => tech.toLowerCase().includes(t))) {
     return "bg-amber-100 text-amber-800 dark:bg-amber-800/30 dark:text-amber-300 border-amber-200 dark:border-amber-800/50 hover:bg-amber-200 dark:hover:bg-amber-800/40"
   }
-  // Custom/Other
-  return "bg-emerald-100 text-emerald-800 dark:bg-emerald-800/30 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/50 hover:bg-emerald-200 dark:hover:bg-emerald-800/40"
+
+  // Testing & DevOps
+  if (['junit', 'docker'].some(t => tech.toLowerCase().includes(t))) {
+    return "bg-indigo-100 text-indigo-800 dark:bg-indigo-800/30 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800/50 hover:bg-indigo-200 dark:hover:bg-indigo-800/40"
+  }
+
+  // PHP & Related
+  if (['php', 'wordpress plugins'].some(t => tech.toLowerCase().includes(t))) {
+    return "bg-purple-100 text-purple-800 dark:bg-purple-800/30 dark:text-purple-300 border-purple-200 dark:border-purple-800/50 hover:bg-purple-200 dark:hover:bg-purple-800/40"
+  }
+
+  // Default/Other
+  return "bg-rose-100 text-rose-800 dark:bg-rose-800/30 dark:text-rose-300 border-rose-200 dark:border-rose-800/50 hover:bg-rose-200 dark:hover:bg-rose-800/40"
 }
 
 export default async function Home() {
