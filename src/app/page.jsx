@@ -49,7 +49,7 @@ const projects = [
   {
     name: 'MapleRescue',
     description:
-      'A web platform that helps pet rescue groups coordinate foster homes, transport, and medical records.',
+      'A web platform that helps pet rescue groups coordinate foster homes and transport',
     link: { href: '#', label: 'maplerescue.org' },
     logo: logoRescue,
     technologies: ['React', 'Material UI', 'Python + Django', 'PostgreSQL'],
