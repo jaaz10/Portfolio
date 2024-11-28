@@ -487,8 +487,7 @@ export default async function Home() {
         )}
       </div>
       <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 dark:text-zinc-200">
-        <LinkIcon className="h-6 w-6 flex-none" />
-        <a href={project.link.href} className="ml-2 hover:text-teal-500 cursor-pointer">
+        <a href={project.link.href} className="hover:text-teal-500 cursor-pointer">
           Visit Website →
         </a>
       </p>
