@@ -464,7 +464,7 @@ export default async function Home() {
         />
       </div>
       <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-        <Card.Link href={project.link.href}>
+        <Card.Link href={project.link.href} className="hover:underline">
           {project.name}
         </Card.Link>
       </h2>
