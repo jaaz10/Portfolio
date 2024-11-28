@@ -32,9 +32,9 @@ import logoOpenShuttle from '@/images/logos/mana.svg'
 import { getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
-import logoOptician from '@/images/logos/optician.svg'      // Eye care/optician related
-import logoRescue from '@/images/logos/paw.svg'            // Pet/animal rescue related
-import logoOnboarding from '@/images/logos/onboarding.svg'  // HR/onboarding related
+import logoOptician from '@/images/logos/eye-glasses.svg'      // Eye care/optician related
+import logoRescue from '@/images/logos/pet.svg'            // Pet/animal rescue related
+import logoOnboarding from '@/images/logos/onboard.svg'  // HR/onboarding related
 
 const projects = [
   {
