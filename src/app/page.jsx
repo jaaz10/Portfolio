@@ -47,10 +47,10 @@ const projects = [
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
-    name: 'MapleBridge',
+    name: 'MapleRescue',
     description:
-      'A platform connecting fosters with dogs needing homes.',
-    link: { href: '#', label: 'maplebridge.org' },
+      'Connecting puppy mill survivors with foster homes and forever families.',
+    link: { href: '#', label: 'maplerescue.org' },
     logo: logoRescue,
     technologies: ['Bootstrap 5','Vanilla JS', 'Python + Django', 'PostgreSQL'],
   },
