@@ -47,13 +47,18 @@ export function TechStack() {
     }
   ]
 
+  // Constants for container boundaries
+  const PADDING = 6 // Matches the p-6 padding
+  const ICON_SIZE = 24 // Approximate size of text-3xl icons
+  const MAX_POSITION = 350 - ICON_SIZE - (PADDING * 2) // Container width minus padding and icon size
+
   // Helper function to get edge positions
   const getEdgePosition = () => {
     const positions = [
-      [20, Math.random() * 280],  // Left edge
-      [280, Math.random() * 280], // Right edge
-      [Math.random() * 280, 20],  // Top edge
-      [Math.random() * 280, 280]  // Bottom edge
+      [0, Math.random() * MAX_POSITION],             // Left edge
+      [MAX_POSITION, Math.random() * MAX_POSITION],  // Right edge
+      [Math.random() * MAX_POSITION, 0],             // Top edge
+      [Math.random() * MAX_POSITION, MAX_POSITION]   // Bottom edge
     ]
     return positions[Math.floor(Math.random() * positions.length)]
   }
@@ -62,7 +67,7 @@ export function TechStack() {
   const getMixedPosition = () => {
     return Math.random() > 0.5 ? 
       getEdgePosition() : 
-      [20 + Math.random() * 260, 20 + Math.random() * 260]
+      [Math.random() * MAX_POSITION, Math.random() * MAX_POSITION]
   }
 
   return (
