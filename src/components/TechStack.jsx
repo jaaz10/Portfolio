@@ -1,6 +1,6 @@
 'use client'
 
-import { FaJsSquare, FaReact, FaNodeJs, FaPython, FaDatabase, FaAws, FaGitAlt, FaDocker, FaBriefcase } from 'react-icons/fa'
+import { FaJsSquare, FaReact, FaNodeJs, FaPython, FaDatabase, FaAws, FaGitAlt, FaDocker, FaCode } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 export function TechStack() {
@@ -48,15 +48,15 @@ export function TechStack() {
   ]
 
   const getRandomPosition = () => {
-    const min = 20
-    const max = 380
+    const min = 50
+    const max = 350
     return min + Math.random() * (max - min)
   }
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <FaBriefcase className="h-6 w-6 flex-none" />
+      <h2 className="flex text-sm font-semibold text-zinc-800 dark:text-zinc-100">
+        <FaCode className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Stack</span>
       </h2>
       <div className="relative aspect-square w-full overflow-hidden rounded-lg mt-6">
