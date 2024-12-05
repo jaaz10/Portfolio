@@ -14,10 +14,6 @@ export function ProjectCard({ project }) {
         </h2>
       </div>
 
-      <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
-        {project.description}
-      </p>
-
       <div className="relative mt-4 w-full h-48 rounded-lg overflow-hidden">
         <img
           src={project.screenshot}
@@ -25,6 +21,12 @@ export function ProjectCard({ project }) {
           className="w-full h-full object-cover"
         />
       </div>
+
+      {project.name === 'Clearing Vision' && (
+        <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
+          {project.description}
+        </p>
+      )}
 
       <div className="mt-4">
         <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-100 mb-2">
@@ -41,6 +43,17 @@ export function ProjectCard({ project }) {
           ))}
         </div>
       </div>
+
+      <div className="mt-4">
+        <a
+          href="#"
+          className="text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+          onClick={() => alert('More Info modal coming soon!')}
+        >
+          More Info →
+        </a>
+      </div>
+
       {project.link && (
         <div className="mt-4">
           <a
