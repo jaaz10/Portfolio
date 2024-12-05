@@ -46,23 +46,35 @@ const projects = [
     description: 'A professional website for a Chicago-based optician serving the Clearing area since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
-    technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
+    technologies: [
+      { name: 'WordPress', color: '#21759B' },
+      { name: 'Custom WP Plugins', color: '#0073AA' },
+      { name: 'PHP', color: '#777BB4' },
+      { name: 'MySQL', color: '#4479A1' }
+    ],
   },
   {
     name: 'DogFoster',
-    description:
-      'Connecting pups with foster homes and forever families.',
+    description: 'Connecting pups with foster homes and forever families.',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe'],
+    technologies: [
+      { name: 'Next.js', color: '#000000' },
+      { name: 'Tailwind CSS', color: '#06B6D4' },
+      { name: 'Supabase', color: '#3ECF8E' },
+      { name: 'Stripe', color: '#008CDD' }
+    ],
   },
   {
     name: '¿Cómo Se Dice?',
-    description:
-      'A Spanish learning app that helps you learn Spanish words and phrases.',
+    description: 'A Spanish learning app that helps you learn Spanish words and phrases.',
     link: { href: '#', label: 'comosedice.com' },
     logo: logoOnboarding,
-    technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB'],
+    technologies: [
+      { name: 'React Native + Expo', color: '#61DAFB' },
+      { name: 'Node.js + Express', color: '#339933' },
+      { name: 'MongoDB', color: '#47A248' }
+    ],
   },
 ]
 
