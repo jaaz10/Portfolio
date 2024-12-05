@@ -3,6 +3,24 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
+import { FaWordpress, FaReact, FaNodeJs, FaFigma } from 'react-icons/fa'
+import { SiTailwindcss, SiMysql, SiMongodb, SiSupabase, SiPhp, SiExpo, SiNextdotjs } from 'react-icons/si'
+import { TbPlugConnected } from 'react-icons/tb'
+
+const techIcons = {
+  'WordPress': <FaWordpress />,
+  'Custom WP Plugins': <TbPlugConnected />,
+  'PHP': <SiPhp />,
+  'MySQL': <SiMysql />,
+  'React + Next.js': <FaReact />,
+  'Tailwind CSS': <SiTailwindcss />,
+  'Supabase': <SiSupabase />,
+  'Node.js + Express': <FaNodeJs />,
+  'Figma': <FaFigma />,
+  'React Native + Expo': <SiExpo />,
+  'MongoDB': <SiMongodb />,
+  'Next.js': <SiNextdotjs />
+}
 
 export function ProjectCard({ project }) {
   return (
@@ -17,15 +35,16 @@ export function ProjectCard({ project }) {
         {project.description}
       </p>
       <div className="mt-4">
-        <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 mb-2">
+        <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-100 mb-2">
           Technologies Used:
         </p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-400/10 text-teal-500 dark:text-teal-400"
+              className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-teal-400/10 text-teal-500 dark:text-teal-400 hover:bg-teal-400/20 transition-colors"
             >
+              <span className="mr-1.5">{techIcons[tech]}</span>
               {tech}
             </span>
           ))}
