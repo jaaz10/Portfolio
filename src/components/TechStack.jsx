@@ -50,8 +50,8 @@ export function TechStack() {
 
   const PADDING = 6
   const ICON_SIZE = 24
-  const MAX_POSITION = 350 - ICON_SIZE - (PADDING * 2)
-  const MIN_DISTANCE = 60
+  const MAX_POSITION = 250 - ICON_SIZE - (PADDING * 2)
+  const MIN_DISTANCE = 45
 
   const isTooClose = (pos1, pos2) => {
     const dx = pos1[0] - pos2[0]
@@ -93,7 +93,7 @@ export function TechStack() {
         <FaCode className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Stack</span>
       </h2>
-      <div className="relative aspect-square w-full max-w-[350px] mx-auto mt-6 rounded-lg">
+      <div className="relative aspect-square w-full max-w-[250px] mx-auto mt-6 rounded-lg">
         <div className="relative w-full h-full">
           {technologies.map((tech, index) => {
             const existingPositions = []
