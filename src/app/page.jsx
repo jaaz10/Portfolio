@@ -47,7 +47,7 @@ const projects = [
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
     screenshot: 'https://i.ibb.co/3CJfNLy/Screenshot-2024-12-05-at-2-02-24-PM-2.png',
-    technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
+    technologies: ['WordPress', 'Custom WordPress Plugins', 'PHP', 'MySQL'],
   },
   {
     name: 'DogFoster',
