@@ -43,25 +43,26 @@ import { TechStack } from '@/components/TechStack'
 const projects = [
   {
     name: 'Clearing Vision',
-    description: 'An innovative website designed for a Chicago-based optician, providing seamless online appointment scheduling and a comprehensive lens catalog.',
+    description: 'A professional website for an optician serving the metropolitan area since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
+    screenshot: 'https://placehold.co/600x400/1F2937/FFFFFF/png?text=Clearing+Vision',
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
     name: 'DogFoster',
-    description:
-      'A platform dedicated to connecting dogs with loving foster homes and permanent families, ensuring every pup finds a safe and caring environment.',
+    description: 'Connecting pups with foster homes and forever families one pup at a time. Transport provided.',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe', 'Node.js', 'Express'],
+    screenshot: 'https://placehold.co/600x400/1F2937/FFFFFF/png?text=DogFoster',
+    technologies: ['React + Next.js', 'Tailwind CSS', 'Supabase', 'Node.js + Express','Figma'],
   },
   {
     name: '¿Cómo Se Dice?',
-    description:
-      'An engaging Spanish learning application that facilitates the acquisition of vocabulary and phrases through interactive lessons and quizzes.',
+    description: 'A Spanish learning app that helps you learn Spanish words and phrases. Bring it out at parties!',
     link: { href: '#', label: 'comosedice.com' },
     logo: logoOnboarding,
+    screenshot: 'https://placehold.co/600x400/1F2937/FFFFFF/png?text=Como+Se+Dice',
     technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB', 'Next.js'],
   },
 ]

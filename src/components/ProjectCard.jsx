@@ -13,6 +13,15 @@ export function ProjectCard({ project }) {
           {project.name}
         </h2>
       </div>
+      <div className="mt-4 w-full h-48 relative rounded-lg overflow-hidden">
+        <Image
+          src={project.screenshot}
+          alt={`Screenshot of ${project.name}`}
+          fill
+          className="object-cover"
+          quality={95}
+        />
+      </div>
       <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
         {project.description}
       </p>
