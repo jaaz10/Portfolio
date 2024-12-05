@@ -48,8 +48,8 @@ export function TechStack() {
   ]
 
   const getRandomPosition = () => {
-    const min = 10
-    const max = 230
+    const min = 20
+    const max = 280
     return min + Math.random() * (max - min)
   }
 
@@ -59,7 +59,7 @@ export function TechStack() {
         <FaCode className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Stack</span>
       </h2>
-      <div className="relative aspect-square w-full max-w-[300px] mx-auto mt-6 rounded-lg">
+      <div className="relative aspect-square w-full max-w-[350px] mx-auto mt-6 rounded-lg">
         <div className="relative w-full h-full">
           {technologies.map((tech) => (
             <motion.div
@@ -85,7 +85,7 @@ export function TechStack() {
                 ],
               }}
               transition={{
-                duration: 15 + Math.random() * 5,
+                duration: 8 + Math.random() * 4,
                 repeat: Infinity,
                 repeatType: "reverse",
                 ease: "linear"
