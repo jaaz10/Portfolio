@@ -337,7 +337,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-1">
+        <div className="mt-24 grid grid-cols-1">
           <ul role="list" className="mb-10 mt-5 grid w-full grid-cols-1 gap-y-16 sm:mx-auto sm:w-full sm:grid-cols-1 md:grid-cols-[137px_1fr] md:border-l md:border-zinc-100 md:pl-6 lg:w-full lg:grid-cols-[120px_1fr] md:dark:border-zinc-700/40">
             <section aria-labelledby="someProjects">
               <div className="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
