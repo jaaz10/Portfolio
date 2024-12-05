@@ -62,7 +62,7 @@ export function ProjectCard({ project }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleMoreInfo = (e) => {
-    e.preventDefault() // Prevent default behavior
+    e.preventDefault()
     setIsOpen(true)
   }
 
@@ -78,10 +78,12 @@ export function ProjectCard({ project }) {
       </div>
 
       <div className="relative mt-4 w-full h-72 rounded-lg overflow-hidden">
-        <img
+        <Image
           src={project.screenshot}
           alt={`Screenshot of ${project.name}`}
-          className="w-full h-full object-cover"
+          className="object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
 
@@ -145,7 +147,7 @@ export function ProjectCard({ project }) {
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                 This project addresses several key challenges in the {project.name === 'Clearing Vision' ? 'healthcare' : 
                 project.name === 'DogFoster' ? 'animal welfare' : 'education'} sector. Through innovative technology and 
-                user-centered design, we've created a solution that makes a real impact.
+                user-centered design, we&apos;ve created a solution that makes a real impact.
               </p>
             </div>
 
@@ -189,10 +191,12 @@ export function ProjectCard({ project }) {
               <div className="mt-4 grid grid-cols-2 gap-4">
                 {readme.screenshots.map((screenshot, index) => (
                   <div key={index} className="relative h-48 bg-zinc-100 dark:bg-zinc-900 rounded-lg overflow-hidden">
-                    <img
+                    <Image
                       src={project.screenshot}
                       alt={screenshot}
-                      className="w-full h-full object-cover"
+                      className="object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
                       <p className="text-white text-sm">{screenshot}</p>
