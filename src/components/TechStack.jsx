@@ -11,6 +11,7 @@ export function TechStack() {
       icon: <FaJsSquare />,
       proficiency: 'Advanced',
       years: '3+ years',
+      color: '#F7DF1E'
     },
     {
       technology: 'React',
@@ -18,6 +19,7 @@ export function TechStack() {
       icon: <FaReact />,
       proficiency: 'Advanced',
       years: '2+ years',
+      color: '#61DAFB'
     },
     {
       technology: 'Node.js',
@@ -25,6 +27,7 @@ export function TechStack() {
       icon: <FaNodeJs />,
       proficiency: 'Intermediate',
       years: '2+ years',
+      color: '#339933'
     },
     {
       technology: 'Python',
@@ -32,6 +35,7 @@ export function TechStack() {
       icon: <FaPython />,
       proficiency: 'Intermediate',
       years: '2+ years',
+      color: '#3776AB'
     },
     {
       technology: 'SQL',
@@ -39,6 +43,7 @@ export function TechStack() {
       icon: <FaDatabase />,
       proficiency: 'Advanced',
       years: '3+ years',
+      color: '#336791'
     },
     {
       technology: 'AWS',
@@ -46,6 +51,7 @@ export function TechStack() {
       icon: <FaAws />,
       proficiency: 'Intermediate',
       years: '1+ year',
+      color: '#FF9900'
     },
     {
       technology: 'Git',
@@ -53,6 +59,7 @@ export function TechStack() {
       icon: <FaGitAlt />,
       proficiency: 'Advanced',
       years: '3+ years',
+      color: '#F05032'
     },
     {
       technology: 'Docker',
@@ -60,13 +67,13 @@ export function TechStack() {
       icon: <FaDocker />,
       proficiency: 'Intermediate',
       years: '1+ year',
+      color: '#2496ED'
     }
   ]
 
-  // Calculate random positions within a more constrained, square area
   const getRandomPosition = () => {
-    const min = 50 // Minimum distance from edges
-    const max = 300 // Maximum position value
+    const min = 50
+    const max = 300
     return min + Math.random() * (max - min * 2)
   }
 
@@ -81,7 +88,8 @@ export function TechStack() {
           {technologies.map((tech) => (
             <motion.div
               key={tech.technology}
-              className="absolute text-4xl text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer"
+              className="absolute text-4xl cursor-pointer"
+              style={{ color: tech.color }}
               initial={{
                 x: getRandomPosition(),
                 y: getRandomPosition(),
@@ -108,6 +116,7 @@ export function TechStack() {
               }}
               whileHover={{
                 scale: 1.2,
+                filter: 'brightness(1.2)',
                 transition: { duration: 0.2 }
               }}
               title={`${tech.technology} - ${tech.proficiency} (${tech.years})`}
