@@ -174,12 +174,12 @@ function MobileNavigation(props) {
   )
 }
 
-function NavItem({ href, children, icon: Icon, tooltip }) {
+function NavItem({ href, children }) {
   let isActive = usePathname() === href
   let isExternal = href.startsWith('http')
 
   return (
-    <li className="relative group">
+    <li>
       <Link
         href={href}
         className={clsx(
@@ -193,20 +193,11 @@ function NavItem({ href, children, icon: Icon, tooltip }) {
           rel: "noopener noreferrer"
         } : {}}
       >
-        {Icon ? (
-          <Icon className="h-6 w-6 fill-current" />
-        ) : (
-          children
-        )}
+        {children}
         {isActive && (
           <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
         )}
       </Link>
-      {tooltip && (
-        <span className="absolute -bottom-12 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-2 py-1 text-sm text-white bg-gray-800 rounded whitespace-nowrap">
-          {tooltip}
-        </span>
-      )}
     </li>
   )
 }
@@ -215,10 +206,10 @@ function DesktopNavigation(props) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/" icon={HomeIcon} tooltip="Home" />
-        <NavItem href="https://github.com/jaaz10" icon={GitHubIcon} tooltip="GitHub" target="_blank" />
-        <NavItem href="https://www.linkedin.com/in/jaazespinoza/" icon={LinkedInIcon} tooltip="LinkedIn" target="_blank" />
-        <NavItem href="https://drive.google.com/file/d/1KR0d9ryhZ4qUF6hfk5zbJCNmJwZH6r6i/view?usp=drive_link" icon={ResumeIcon} tooltip="Resume" target="_blank" />
+        <NavItem href="/">Home</NavItem>
+        <NavItem href="https://github.com/jaaz10">GitHub</NavItem>
+        <NavItem href="https://www.linkedin.com/in/jaazespinoza/">LinkedIn</NavItem>
+        <NavItem href="https://drive.google.com/file/d/1KR0d9ryhZ4qUF6hfk5zbJCNmJwZH6r6i/view?usp=drive_link">Resume</NavItem>
       </ul>
     </nav>
   )
