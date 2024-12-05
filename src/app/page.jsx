@@ -46,7 +46,7 @@ const projects = [
     description: 'A professional website for an optician serving the metropolitan area since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
-    screenshot: 'https://i.ibb.co/5ndy8N2/earth-8882368-640.jpg',
+    screenshot: 'https://i.ibb.co/3CJfNLy/Screenshot-2024-12-05-at-2-02-24-PM-2.png',
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
