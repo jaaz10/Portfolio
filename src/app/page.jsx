@@ -303,9 +303,11 @@ export default async function Home() {
                 // event="SysConf 2021"
                 // cta="../images/avatar.jpg"
               />
-              <img
+              <Image
                 src="/images/logos/earth.png"
                 alt="Modern developer workspace setup"
+                width={500}
+                height={300}
                 className="!mb-0 !mt-[32px] rounded-[16px]"
               />
               {/*<p className="items-right !mt-2 flex justify-end text-sm text-[#A1A1AA]">
