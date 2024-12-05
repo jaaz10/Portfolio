@@ -304,7 +304,7 @@ export default async function Home() {
                 // cta="../images/avatar.jpg"
               />
               <Image
-                src="/images/earth.png"
+                src="https://i.ibb.co/5ndy8N2/earth-8882368-640.jpg"
                 alt="Modern developer workspace setup"
                 width={500}
                 height={300}
