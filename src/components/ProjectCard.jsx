@@ -42,7 +42,7 @@ export function ProjectCard({ project }) {
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4 flex gap-4">
         <a
           href="#"
           className="text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
@@ -50,10 +50,8 @@ export function ProjectCard({ project }) {
         >
           More Info →
         </a>
-      </div>
 
-      {project.link && (
-        <div className="mt-4">
+        {project.link && (
           <a
             href={project.link.href}
             className="text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
@@ -62,8 +60,8 @@ export function ProjectCard({ project }) {
           >
             {project.link.href !== '#' ? 'View live project →' : 'Coming soon →'}
           </a>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 } 
