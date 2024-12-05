@@ -38,6 +38,9 @@ import logoOnboarding from '@/images/logos/onboard.svg'  // HR/onboarding relate
 import { ProjectCard } from '@/components/ProjectCard'
 import { projectDetails } from '@/lib/projectDetails'
 
+import { FaJsSquare, FaReact, FaNodeJs, FaPython, FaDatabase, FaAws, FaGitAlt, FaDocker } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+
 const projects = [
   {
     name: 'Clearing Vision Website',
@@ -55,7 +58,7 @@ const projects = [
     technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe'],
   },
   {
-    name: 'Como se dice',
+    name: '¿Cómo Se Dice?',
     description:
       'A Spanish learning app that helps you learn Spanish words and phrases.',
     link: { href: '#', label: 'comosedice.com' },
@@ -251,83 +254,110 @@ function Role({ role }) {
   )
 }
 
-function Resume() {
-  let resume = [
+function TechStack() {
+  const technologies = [
     {
-      company: 'Illinois State Treasurer Office',
-      title: 'IT Network Support Technician',
-      logo: logoCosmos,
-      start: '2024',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
-      },
+      technology: 'JavaScript',
+      category: 'Programming Language',
+      icon: <FaJsSquare />,
+      proficiency: 'Advanced',
+      years: '3+ years',
     },
     {
-      company: 'Realnets',
-      title: 'Help Desk Technician',
-      logo: logoPlanetaria,
-      start: '2023',
-      end: '2024',
+      technology: 'React',
+      category: 'Frontend Framework',
+      icon: <FaReact />,
+      proficiency: 'Advanced',
+      years: '2+ years',
     },
     {
-      company: 'TSP',
-      title: 'Data Center Field Technician',
-      logo: logoAirbnb,
-      start: '2022',
-      end: '2023',
+      technology: 'Node.js',
+      category: 'Backend Runtime',
+      icon: <FaNodeJs />,
+      proficiency: 'Intermediate',
+      years: '2+ years',
     },
-
     {
-      company: 'SDI Presence',
-      title: 'Desktop Support Specialist Intern',
-      logo: logoFacebook,
-      start: '2021',
-      end: '2022',
+      technology: 'Python',
+      category: 'Programming Language',
+      icon: <FaPython />,
+      proficiency: 'Intermediate',
+      years: '2+ years',
     },
-  ]
+    {
+      technology: 'SQL',
+      category: 'Database',
+      icon: <FaDatabase />,
+      proficiency: 'Advanced',
+      years: '3+ years',
+    },
+    {
+      technology: 'AWS',
+      category: 'Cloud Services',
+      icon: <FaAws />,
+      proficiency: 'Intermediate',
+      years: '1+ year',
+    },
+    {
+      technology: 'Git',
+      category: 'Version Control',
+      icon: <FaGitAlt />,
+      proficiency: 'Advanced',
+      years: '3+ years',
+    },
+    {
+      technology: 'Docker',
+      category: 'Containerization',
+      icon: <FaDocker />,
+      proficiency: 'Intermediate',
+      years: '1+ year',
+    }
+  ];
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">Tech Stack</span>
       </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <Role key={roleIndex} role={role} />
-        ))}
-      </ol>
-      {/* <Button href="#" variant="secondary" className="group mt-6 w-full">
-        View my Resume
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button> */}
-    </div>
-  )
-}
-
-function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
-
-  return (
-    <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length],
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
+      <div className="relative h-[400px] w-full overflow-hidden rounded-lg mt-6">
+        <div className="relative w-full h-full">
+          {technologies.map((tech) => (
+            <motion.div
+              key={tech.technology}
+              className="absolute text-4xl text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer"
+              initial={{
+                x: Math.random() * 400,
+                y: Math.random() * 400,
+              }}
+              animate={{
+                x: [
+                  Math.random() * 400,
+                  Math.random() * 400,
+                  Math.random() * 400,
+                  Math.random() * 400,
+                ],
+                y: [
+                  Math.random() * 400,
+                  Math.random() * 400,
+                  Math.random() * 400,
+                  Math.random() * 400,
+                ],
+              }}
+              transition={{
+                duration: 20 + Math.random() * 10,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+              whileHover={{
+                scale: 1.2,
+              }}
+              title={`${tech.technology} - ${tech.proficiency} (${tech.years})`}
+            >
+              {tech.icon}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -410,15 +440,10 @@ export default async function Home() {
               </p>
               */}
             </SpeakingSection>
-
-            {/* {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))} */}
           </div>
 
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* <Newsletter /> */}
-            <Resume />
+            <TechStack />
           </div>
         </div>
 
