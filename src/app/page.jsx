@@ -47,20 +47,20 @@ const projects = [
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
-    name: 'MapleRescue',
+    name: 'DogFoster',
     description:
-      'Connecting puppy mill survivors with foster homes and forever families.',
-    link: { href: '#', label: 'maplerescue.org' },
+      'Connecting pups with foster homes and forever families.',
+    link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    technologies: ['Bootstrap 5','Vanilla JS', 'Python + Django', 'PostgreSQL'],
+    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe'],
   },
   {
-    name: 'Onboardly',
+    name: 'Como se dice',
     description:
-      'An automated IT onboarding system that streamlines new employee setup processes.',
-    link: { href: '#', label: 'onboardly.com' },
+      'A Spanish learning app that helps you learn Spanish words and phrases.',
+    link: { href: '#', label: 'comosedice.com' },
     logo: logoOnboarding,
-    technologies: ['Java + Spring Boot', 'Firebase', 'JUnit', 'Docker'],
+    technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB'],
   },
 ]
 
@@ -377,8 +377,8 @@ export default async function Home() {
               <Appearance
                 // href="#"
                 // title="In space, no one can watch you stream — until now"
-                description="Hey! I'm Jaaz - by day I work in IT at the State Treasurer's Office in Chicago, 
-                and by night I'm pursuing my CS degree at DePaul. When I'm not knee-deep in schoolwork or
+                description="Hey! I'm Jaaz - by day I work in IT, 
+                and by night I'm pursuing my CS degree. When I'm not knee-deep in schoolwork or
                 helping users fix their IT headaches, you can find me either messing with my HomeLab or 
                 coding up some new side project."
                 // event="SysConf 2021"
