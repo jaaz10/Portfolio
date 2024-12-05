@@ -48,8 +48,8 @@ export function TechStack() {
   ]
 
   const getRandomPosition = () => {
-    const min = 50
-    const max = 350
+    const min = 30
+    const max = 270
     return min + Math.random() * (max - min)
   }
 
@@ -59,12 +59,12 @@ export function TechStack() {
         <FaCode className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Stack</span>
       </h2>
-      <div className="relative aspect-square w-full overflow-hidden rounded-lg mt-6">
+      <div className="relative aspect-square w-full max-w-[300px] mx-auto overflow-hidden rounded-lg mt-6">
         <div className="relative w-full h-full">
           {technologies.map((tech) => (
             <motion.div
               key={tech.technology}
-              className="absolute text-4xl cursor-pointer group"
+              className="absolute text-3xl cursor-pointer group"
               style={{ color: tech.color }}
               initial={{
                 x: getRandomPosition(),
@@ -96,7 +96,7 @@ export function TechStack() {
                 transition: { duration: 0.2 }
               }}
             >
-              <span className="absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm whitespace-nowrap">
+              <span className="absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs whitespace-nowrap">
                 {tech.technology}
               </span>
               {tech.icon}
