@@ -50,7 +50,7 @@ const projects = [
   },
   {
     name: 'DogFoster',
-    description:'Connecting pups with foster homes and forever families one pup at a time. Emergency tranport provided.',
+    description:'Connecting pups with foster homes and forever families one pup at a time. Transport provided.',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
     technologies: ['React + Next.js', 'Tailwind CSS', 'Supabase', 'Node.js + Express','Figma'],
