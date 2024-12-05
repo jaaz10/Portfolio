@@ -8,7 +8,7 @@ export function ProjectCard({ project }) {
   return (
     <div className="flex flex-col h-full">
       <div className="flex items-center gap-x-4">
-        <Image src={project.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image src={project.logo} alt="" className="h-10 w-10" unoptimized />
         <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
           {project.name}
         </h2>
