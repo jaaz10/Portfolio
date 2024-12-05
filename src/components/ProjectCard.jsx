@@ -14,7 +14,7 @@ export function ProjectCard({ project }) {
         </h2>
       </div>
 
-      <div className="relative mt-4 w-full h-48 rounded-lg overflow-hidden">
+      <div className="relative mt-4 w-full h-64 rounded-lg overflow-hidden">
         <img
           src={project.screenshot}
           alt={`Screenshot of ${project.name}`}
