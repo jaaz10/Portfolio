@@ -304,9 +304,8 @@ export default async function Home() {
                 // cta="../images/avatar.jpg"
               />
               <img
-                src="https://i.ibb.co/XtcFxVz/Depaul-blue-demon-coding-on-lapotop-png.png"
-                alt="Image description"
-                h
+                src="https://i.ibb.co/9T5Zf8h/dev-illustration.png"
+                alt="Modern abstract developer illustration"
                 className="!mb-0 !mt-[32px] rounded-[16px]"
               />
               {/*<p className="items-right !mt-2 flex justify-end text-sm text-[#A1A1AA]">
