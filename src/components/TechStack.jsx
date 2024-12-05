@@ -2,6 +2,7 @@
 
 import { FaJsSquare, FaReact, FaNodeJs, FaPython, FaDatabase, FaAws, FaGitAlt, FaDocker, FaCode } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 export function TechStack() {
   const technologies = [
@@ -50,6 +51,31 @@ export function TechStack() {
   const PADDING = 6
   const ICON_SIZE = 24
   const MAX_POSITION = 350 - ICON_SIZE - (PADDING * 2)
+  const MIN_DISTANCE = 60
+
+  const isTooClose = (pos1, pos2) => {
+    const dx = pos1[0] - pos2[0]
+    const dy = pos1[1] - pos2[1]
+    return Math.sqrt(dx * dx + dy * dy) < MIN_DISTANCE
+  }
+
+  const getValidPosition = (existingPositions) => {
+    let attempts = 0
+    let position
+
+    do {
+      position = Math.random() > 0.5 ? 
+        getEdgePosition() : 
+        [Math.random() * MAX_POSITION, Math.random() * MAX_POSITION]
+      
+      attempts++
+      if (attempts > 50) break
+    } while (
+      existingPositions.some(existing => isTooClose(position, existing))
+    )
+
+    return position
+  }
 
   const getEdgePosition = () => {
     const positions = [
@@ -61,12 +87,6 @@ export function TechStack() {
     return positions[Math.floor(Math.random() * positions.length)]
   }
 
-  const getMixedPosition = () => {
-    return Math.random() > 0.5 ? 
-      getEdgePosition() : 
-      [Math.random() * MAX_POSITION, Math.random() * MAX_POSITION]
-  }
-
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-800 dark:text-zinc-100">
@@ -76,8 +96,12 @@ export function TechStack() {
       <div className="relative aspect-square w-full max-w-[350px] mx-auto mt-6 rounded-lg">
         <div className="relative w-full h-full">
           {technologies.map((tech, index) => {
-            const [startX, startY] = getMixedPosition()
-            const positions = Array(4).fill(null).map(() => getMixedPosition())
+            const existingPositions = []
+            const positions = Array(4).fill(null).map(() => {
+              const newPos = getValidPosition(existingPositions)
+              existingPositions.push(newPos)
+              return newPos
+            })
             
             return (
               <motion.div
@@ -88,8 +112,8 @@ export function TechStack() {
                   zIndex: Math.random() * 10
                 }}
                 initial={{
-                  x: startX,
-                  y: startY,
+                  x: positions[0][0],
+                  y: positions[0][1],
                 }}
                 animate={{
                   x: positions.map(p => p[0]),
@@ -97,7 +121,7 @@ export function TechStack() {
                   zIndex: [1, 2, 1, 2]
                 }}
                 transition={{
-                  duration: 20 + (index * 3),
+                  duration: 15 + (index * 2),
                   repeat: Infinity,
                   repeatType: "mirror",
                   ease: "easeInOut",
