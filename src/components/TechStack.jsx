@@ -47,23 +47,20 @@ export function TechStack() {
     }
   ]
 
-  // Constants for container boundaries
-  const PADDING = 6 // Matches the p-6 padding
-  const ICON_SIZE = 24 // Approximate size of text-3xl icons
-  const MAX_POSITION = 350 - ICON_SIZE - (PADDING * 2) // Container width minus padding and icon size
+  const PADDING = 6
+  const ICON_SIZE = 24
+  const MAX_POSITION = 350 - ICON_SIZE - (PADDING * 2)
 
-  // Helper function to get edge positions
   const getEdgePosition = () => {
     const positions = [
-      [0, Math.random() * MAX_POSITION],             // Left edge
-      [MAX_POSITION, Math.random() * MAX_POSITION],  // Right edge
-      [Math.random() * MAX_POSITION, 0],             // Top edge
-      [Math.random() * MAX_POSITION, MAX_POSITION]   // Bottom edge
+      [0, Math.random() * MAX_POSITION],
+      [MAX_POSITION, Math.random() * MAX_POSITION],
+      [Math.random() * MAX_POSITION, 0],
+      [Math.random() * MAX_POSITION, MAX_POSITION]
     ]
     return positions[Math.floor(Math.random() * positions.length)]
   }
 
-  // Get a mix of edge and random positions
   const getMixedPosition = () => {
     return Math.random() > 0.5 ? 
       getEdgePosition() : 
@@ -78,7 +75,7 @@ export function TechStack() {
       </h2>
       <div className="relative aspect-square w-full max-w-[350px] mx-auto mt-6 rounded-lg">
         <div className="relative w-full h-full">
-          {technologies.map((tech) => {
+          {technologies.map((tech, index) => {
             const [startX, startY] = getMixedPosition()
             const positions = Array(4).fill(null).map(() => getMixedPosition())
             
@@ -100,20 +97,20 @@ export function TechStack() {
                   zIndex: [1, 2, 1, 2]
                 }}
                 transition={{
-                  duration: 8 + Math.random() * 4,
+                  duration: 20 + (index * 3),
                   repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "linear",
+                  repeatType: "mirror",
+                  ease: "easeInOut",
                   zIndex: {
                     duration: 0,
-                    delay: Math.random() * 5
+                    delay: index * 2
                   }
                 }}
                 whileHover={{
                   scale: 1.2,
                   filter: 'brightness(1.2)',
                   zIndex: 10,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.3 }
                 }}
               >
                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs whitespace-nowrap bg-white/80 dark:bg-zinc-800/80 px-2 py-1 rounded">
