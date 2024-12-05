@@ -54,7 +54,7 @@ const projects = [
       'Connecting pups with foster homes and forever families. Lorem ipsum dolor sit amet',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe'],
+    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe', 'Node.js'],
   },
   {
     name: '¿Cómo Se Dice?',
@@ -62,7 +62,7 @@ const projects = [
       'A Spanish learning app that helps you learn Spanish words and phrases. Lorem ipsum dolor',
     link: { href: '#', label: 'comosedice.com' },
     logo: logoOnboarding,
-    technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB'],
+    technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB', 'Next.js'],
   },
 ]
 
