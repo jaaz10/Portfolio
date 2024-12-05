@@ -43,14 +43,6 @@ export function ProjectCard({ project }) {
       </div>
 
       <div className="mt-4 flex justify-between">
-        <a
-          href="#"
-          className="text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
-          onClick={() => alert('More Info modal coming soon!')}
-        >
-          More Info →
-        </a>
-
         {project.link && (
           <a
             href={project.link.href}
@@ -61,6 +53,14 @@ export function ProjectCard({ project }) {
             {project.link.href !== '#' ? 'View live project →' : 'Coming soon →'}
           </a>
         )}
+
+        <a
+          href="#"
+          className="text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+          onClick={() => alert('More Info modal coming soon!')}
+        >
+          More Info →
+        </a>
       </div>
     </div>
   )
