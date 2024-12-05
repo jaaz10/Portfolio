@@ -42,7 +42,7 @@ export function ProjectCard({ project }) {
         </div>
       </div>
 
-      <div className="mt-4 flex gap-4">
+      <div className="mt-4 flex justify-between">
         <a
           href="#"
           className="text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
