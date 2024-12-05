@@ -16,15 +16,20 @@ export function ProjectCard({ project }) {
       <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
         {project.description}
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.technologies.map((tech) => (
-          <span
-            key={tech}
-            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-400/10 text-teal-500 dark:text-teal-400"
-          >
-            {tech}
-          </span>
-        ))}
+      <div className="mt-4">
+        <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 mb-2">
+          Technologies Used:
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <span
+              key={tech}
+              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-400/10 text-teal-500 dark:text-teal-400"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
       {project.link && (
         <div className="mt-4">
