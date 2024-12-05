@@ -54,7 +54,7 @@ const projects = [
       'Connecting pups with foster homes and forever families. Lorem ipsum dolor sit amet',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe', 'Node.js'],
+    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe', 'Node.js', 'Express'],
   },
   {
     name: '¿Cómo Se Dice?',

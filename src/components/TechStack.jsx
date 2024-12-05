@@ -7,74 +7,50 @@ export function TechStack() {
   const technologies = [
     {
       technology: 'JavaScript',
-      category: 'Programming Language',
       icon: <FaJsSquare />,
-      proficiency: 'Advanced',
-      years: '3+ years',
       color: '#F7DF1E'
     },
     {
       technology: 'React',
-      category: 'Frontend Framework',
       icon: <FaReact />,
-      proficiency: 'Advanced',
-      years: '2+ years',
       color: '#61DAFB'
     },
     {
       technology: 'Node.js',
-      category: 'Backend Runtime',
       icon: <FaNodeJs />,
-      proficiency: 'Intermediate',
-      years: '2+ years',
       color: '#339933'
     },
     {
       technology: 'Python',
-      category: 'Programming Language',
       icon: <FaPython />,
-      proficiency: 'Intermediate',
-      years: '2+ years',
       color: '#3776AB'
     },
     {
       technology: 'SQL',
-      category: 'Database',
       icon: <FaDatabase />,
-      proficiency: 'Advanced',
-      years: '3+ years',
       color: '#336791'
     },
     {
       technology: 'AWS',
-      category: 'Cloud Services',
       icon: <FaAws />,
-      proficiency: 'Intermediate',
-      years: '1+ year',
       color: '#FF9900'
     },
     {
       technology: 'Git',
-      category: 'Version Control',
       icon: <FaGitAlt />,
-      proficiency: 'Advanced',
-      years: '3+ years',
       color: '#F05032'
     },
     {
       technology: 'Docker',
-      category: 'Containerization',
       icon: <FaDocker />,
-      proficiency: 'Intermediate',
-      years: '1+ year',
       color: '#2496ED'
     }
   ]
 
   const getRandomPosition = () => {
-    const min = 50
-    const max = 300
-    return min + Math.random() * (max - min * 2)
+    const min = 20
+    const max = 380
+    return min + Math.random() * (max - min)
   }
 
   return (
@@ -88,7 +64,7 @@ export function TechStack() {
           {technologies.map((tech) => (
             <motion.div
               key={tech.technology}
-              className="absolute text-4xl cursor-pointer"
+              className="absolute text-4xl cursor-pointer group"
               style={{ color: tech.color }}
               initial={{
                 x: getRandomPosition(),
@@ -109,7 +85,7 @@ export function TechStack() {
                 ],
               }}
               transition={{
-                duration: 20 + Math.random() * 10,
+                duration: 15 + Math.random() * 5,
                 repeat: Infinity,
                 repeatType: "reverse",
                 ease: "linear"
@@ -119,8 +95,10 @@ export function TechStack() {
                 filter: 'brightness(1.2)',
                 transition: { duration: 0.2 }
               }}
-              title={`${tech.technology} - ${tech.proficiency} (${tech.years})`}
             >
+              <span className="absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm whitespace-nowrap">
+                {tech.technology}
+              </span>
               {tech.icon}
             </motion.div>
           ))}
