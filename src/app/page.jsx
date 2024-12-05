@@ -40,6 +40,32 @@ import { projectDetails } from '@/lib/projectDetails'
 
 import { TechStack } from '@/components/TechStack'
 
+const projects = [
+  {
+    name: 'Clearing Vision Website',
+    description: 'A professional website for a Chicago-based optician serving the Clearing area since 2010.',
+    link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
+    logo: logoOptician,
+    technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
+  },
+  {
+    name: 'DogFoster',
+    description:
+      'Connecting pups with foster homes and forever families.',
+    link: { href: '#', label: 'dogfoster.org' },
+    logo: logoRescue,
+    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe'],
+  },
+  {
+    name: '¿Cómo Se Dice?',
+    description:
+      'A Spanish learning app that helps you learn Spanish words and phrases.',
+    link: { href: '#', label: 'comosedice.com' },
+    logo: logoOnboarding,
+    technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB'],
+  },
+]
+
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -54,7 +80,7 @@ function LinkIcon(props) {
 
 // export const metadata = {
 //   title: 'Projects',
-//   description: 'Things I���ve made trying to put my dent in the universe.',
+//   description: 'Things Ive made trying to put my dent in the universe.',
 // }
 
 function SpeakingSection({ children, ...props }) {
