@@ -59,7 +59,8 @@ export function TechStack() {
         <FaCode className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Stack</span>
       </h2>
-      <div className="relative aspect-square w-full max-w-[300px] mx-auto overflow-hidden rounded-lg mt-6">
+      <div className="relative aspect-square w-full max-w-[300px] mx-auto mt-6">
+        <div className="absolute inset-0 rounded-lg border border-zinc-100 dark:border-zinc-700/40" />
         <div className="relative w-full h-full">
           {technologies.map((tech) => (
             <motion.div
