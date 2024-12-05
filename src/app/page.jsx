@@ -349,7 +349,7 @@ export default async function Home() {
             </section>
 
             {/* Projects grid */}
-            <div className="sm:col-span-23 grid gap-10 sm:grid-cols-1 lg:grid-cols-3">
+            <div className="sm:col-span-23 grid gap-10 sm:grid-cols-1 lg:grid-cols-2">
               {projects.map((project) => (
                 <div 
                   key={project.name} 
