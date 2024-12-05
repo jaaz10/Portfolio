@@ -53,7 +53,7 @@ const projects = [
     description:'Connecting pups with foster homes and forever families one pup at a time. Emergency tranport provided.',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    technologies: ['React + Next.js', 'Tailwind CSS', 'Supabase', 'Node.js + Express'],
+    technologies: ['React + Next.js', 'Tailwind CSS', 'Supabase', 'Node.js + Express','Figma'],
   },
   {
     name: '¿Cómo Se Dice?',
