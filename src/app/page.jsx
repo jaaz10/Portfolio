@@ -43,14 +43,14 @@ import { TechStack } from '@/components/TechStack'
 const projects = [
   {
     name: 'Clearing Vision ',
-    description: 'A website for an optician serving the metropolitan area since 2010.',
+    description: 'A professionalwebsite for an optician serving the metropolitan area since 2010. ',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
     name: 'DogFoster',
-    description:'Connecting pups with foster homes and forever families one pup at a time.',
+    description:'Connecting pups with foster homes and forever families one pup at a time. Tranport provided.',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
     technologies: ['React + Next.js', 'Tailwind CSS', 'Supabase', 'Node.js + Express'],
@@ -58,7 +58,7 @@ const projects = [
   {
     name: '¿Cómo Se Dice?',
     description:
-      'A Spanish learning app that helps you learn Spanish words and phrases. Bring it out at Parties!',
+      'A Spanish learning app that helps you learn Spanish words and phrases. Bring it out at parties!',
     link: { href: '#', label: 'comosedice.com' },
     logo: logoOnboarding,
     technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB', 'Next.js'],
