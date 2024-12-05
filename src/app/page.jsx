@@ -46,7 +46,7 @@ const projects = [
     description: 'A professional website for an optician serving the metropolitan area since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
-    screenshot: 'https://placehold.co/600x400/1F2937/FFFFFF/png?text=Clearing+Vision',
+    screenshot: 'https://i.ibb.co/5ndy8N2/earth-8882368-640.jpg',
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
@@ -54,7 +54,7 @@ const projects = [
     description: 'Connecting pups with foster homes and forever families one pup at a time. Transport provided.',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    screenshot: 'https://placehold.co/600x400/1F2937/FFFFFF/png?text=DogFoster',
+    screenshot: 'https://i.ibb.co/5ndy8N2/earth-8882368-640.jpg',
     technologies: ['React + Next.js', 'Tailwind CSS', 'Supabase', 'Node.js + Express','Figma'],
   },
   {
@@ -62,7 +62,7 @@ const projects = [
     description: 'A Spanish learning app that helps you learn Spanish words and phrases. Bring it out at parties!',
     link: { href: '#', label: 'comosedice.com' },
     logo: logoOnboarding,
-    screenshot: 'https://placehold.co/600x400/1F2937/FFFFFF/png?text=Como+Se+Dice',
+    screenshot: 'https://i.ibb.co/5ndy8N2/earth-8882368-640.jpg',
     technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB', 'Next.js'],
   },
 ]
@@ -306,7 +306,7 @@ export default async function Home() {
                 // cta="../images/avatar.jpg"
               />
               <img
-                src="https://i.ibb.co/5ndy8N2/earth-8882368-640.jpg"
+                src="https://i.ibb.co/YZhsWWC/man-5674344-640.jpg"
                 alt="Image description"
                 h
                 className="!mb-0 !mt-[32px] rounded-[16px]"
