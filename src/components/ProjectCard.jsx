@@ -19,14 +19,10 @@ export function ProjectCard({ project }) {
       <div className="mt-4 flex flex-wrap gap-2">
         {project.technologies.map((tech) => (
           <span
-            key={tech.name}
-            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-            style={{
-              backgroundColor: `${tech.color}20`, // 20 is hex for 12% opacity
-              color: tech.color,
-            }}
+            key={tech}
+            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-400/10 text-teal-500 dark:text-teal-400"
           >
-            {tech.name}
+            {tech}
           </span>
         ))}
       </div>
