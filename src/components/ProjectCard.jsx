@@ -4,8 +4,69 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 
+// README content for each project
+const projectReadme = {
+  'Clearing Vision': {
+    overview: "An optician's professional website built with WordPress, featuring online appointment scheduling and frame catalog browsing.",
+    features: [
+      "Online appointment scheduling system",
+      "Interactive frame catalog with filtering options",
+      "Insurance verification portal",
+      "Contact lens reordering system"
+    ],
+    installation: "WordPress installation with custom theme and plugins. Requires PHP 7.4+ and MySQL 5.7+",
+    screenshots: [
+      "Homepage showcase",
+      "Appointment booking interface",
+      "Frame catalog browser",
+      "Patient portal"
+    ]
+  },
+  'DogFoster': {
+    overview: "A full-stack web application connecting foster families with dogs in need, featuring real-time updates and transport coordination.",
+    features: [
+      "Real-time foster home availability tracking",
+      "Transport route optimization",
+      "Foster application processing",
+      "Medical record tracking",
+      "Automated matching system"
+    ],
+    installation: "npm install && npm run dev",
+    screenshots: [
+      "Dashboard view",
+      "Foster application form",
+      "Transport coordination map",
+      "Dog profiles page"
+    ]
+  },
+  '¿Cómo Se Dice?': {
+    overview: "A mobile-first Spanish learning application that makes language learning fun and interactive.",
+    features: [
+      "Daily vocabulary challenges",
+      "Speech recognition for pronunciation practice",
+      "Progress tracking and achievements",
+      "Social learning features",
+      "Offline mode support"
+    ],
+    installation: "expo install && expo start",
+    screenshots: [
+      "Learning interface",
+      "Practice sessions",
+      "Achievement board",
+      "Social leaderboard"
+    ]
+  }
+}
+
 export function ProjectCard({ project }) {
   const [isOpen, setIsOpen] = useState(false)
+
+  const handleMoreInfo = (e) => {
+    e.preventDefault() // Prevent default behavior
+    setIsOpen(true)
+  }
+
+  const readme = projectReadme[project.name]
 
   return (
     <div className="flex flex-col h-full">
@@ -59,7 +120,7 @@ export function ProjectCard({ project }) {
         <a
           href="#"
           className="text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
-          onClick={() => setIsOpen(true)}
+          onClick={handleMoreInfo}
         >
           More Info →
         </a>
@@ -67,25 +128,54 @@ export function ProjectCard({ project }) {
 
       {/* Modal */}
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="fixed z-10 inset-0 overflow-y-auto">
-        <div className="flex items-center justify-center min-h-screen">
+        <div className="flex items-center justify-center min-h-screen p-4">
           <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-          <div className="relative bg-white dark:bg-zinc-800 rounded-lg max-w-lg mx-auto p-6">
-            <Dialog.Title className="text-lg font-bold">{project.name}</Dialog.Title>
-            <Dialog.Description className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              {/* Add your README-like content here */}
-              <p>{project.description}</p>
-              <div className="mt-4">
-                <h3 className="text-sm font-semibold">Screenshots:</h3>
-                <div className="flex gap-2 mt-2">
-                  {/* Replace with actual screenshots */}
-                  <img src={project.screenshot} alt="Screenshot 1" className="w-1/3 h-24 object-cover rounded" />
-                  <img src={project.screenshot} alt="Screenshot 2" className="w-1/3 h-24 object-cover rounded" />
-                  <img src={project.screenshot} alt="Screenshot 3" className="w-1/3 h-24 object-cover rounded" />
-                </div>
+          <div className="relative bg-white dark:bg-zinc-800 rounded-lg w-full max-w-2xl mx-auto p-6">
+            <Dialog.Title className="text-xl font-bold text-zinc-800 dark:text-zinc-100">
+              {project.name}
+            </Dialog.Title>
+            
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Overview</h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{readme.overview}</p>
+            </div>
+
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Key Features</h3>
+              <ul className="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-400">
+                {readme.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Installation</h3>
+              <code className="mt-2 block bg-zinc-100 dark:bg-zinc-900 p-2 rounded text-sm">
+                {readme.installation}
+              </code>
+            </div>
+
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Screenshots</h3>
+              <div className="grid grid-cols-2 gap-4 mt-2">
+                {readme.screenshots.map((screenshot, index) => (
+                  <div key={index} className="relative h-40 bg-zinc-100 dark:bg-zinc-900 rounded overflow-hidden">
+                    <img
+                      src={project.screenshot}
+                      alt={screenshot}
+                      className="w-full h-full object-cover"
+                    />
+                    <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-xs p-1">
+                      {screenshot}
+                    </p>
+                  </div>
+                ))}
               </div>
-            </Dialog.Description>
+            </div>
+
             <button
-              className="mt-4 text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+              className="mt-6 text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
               onClick={() => setIsOpen(false)}
             >
               Close
