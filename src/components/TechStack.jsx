@@ -63,43 +63,52 @@ export function TechStack() {
     }
   ]
 
+  // Calculate random positions within a more constrained, square area
+  const getRandomPosition = () => {
+    const min = 50 // Minimum distance from edges
+    const max = 300 // Maximum position value
+    return min + Math.random() * (max - min * 2)
+  }
+
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <FaBriefcase className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Stack</span>
       </h2>
-      <div className="relative h-[400px] w-full overflow-hidden rounded-lg mt-6">
+      <div className="relative aspect-square w-full overflow-hidden rounded-lg mt-6">
         <div className="relative w-full h-full">
           {technologies.map((tech) => (
             <motion.div
               key={tech.technology}
               className="absolute text-4xl text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer"
               initial={{
-                x: Math.random() * 400,
-                y: Math.random() * 400,
+                x: getRandomPosition(),
+                y: getRandomPosition(),
               }}
               animate={{
                 x: [
-                  Math.random() * 400,
-                  Math.random() * 400,
-                  Math.random() * 400,
-                  Math.random() * 400,
+                  getRandomPosition(),
+                  getRandomPosition(),
+                  getRandomPosition(),
+                  getRandomPosition(),
                 ],
                 y: [
-                  Math.random() * 400,
-                  Math.random() * 400,
-                  Math.random() * 400,
-                  Math.random() * 400,
+                  getRandomPosition(),
+                  getRandomPosition(),
+                  getRandomPosition(),
+                  getRandomPosition(),
                 ],
               }}
               transition={{
                 duration: 20 + Math.random() * 10,
                 repeat: Infinity,
                 repeatType: "reverse",
+                ease: "linear"
               }}
               whileHover={{
                 scale: 1.2,
+                transition: { duration: 0.2 }
               }}
               title={`${tech.technology} - ${tech.proficiency} (${tech.years})`}
             >
