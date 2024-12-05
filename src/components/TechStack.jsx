@@ -1,8 +1,7 @@
 'use client'
 
-import { FaJsSquare, FaReact, FaNodeJs, FaPython, FaDatabase, FaAws, FaGitAlt, FaDocker } from 'react-icons/fa'
+import { FaJsSquare, FaReact, FaNodeJs, FaPython, FaDatabase, FaAws, FaGitAlt, FaDocker, FaBriefcase } from 'react-icons/fa'
 import { motion } from 'framer-motion'
-import { BriefcaseIcon } from '@/components/Icons'
 
 export function TechStack() {
   const technologies = [
@@ -67,7 +66,7 @@ export function TechStack() {
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <FaBriefcase className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Stack</span>
       </h2>
       <div className="relative h-[400px] w-full overflow-hidden rounded-lg mt-6">
