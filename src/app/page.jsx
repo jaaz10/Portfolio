@@ -43,23 +43,22 @@ import { TechStack } from '@/components/TechStack'
 const projects = [
   {
     name: 'Clearing Vision ',
-    description: 'A website for a Chicago-based optician serving the Clearing area since 2010',
+    description: 'A website for an optician serving the metropolitan area since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
     name: 'DogFoster',
-    description:
-      'Connecting pups with foster homes and forever families. Lorem ipsum dolor sit amet',
+    description:'Connecting pups with foster homes and forever families one pup at a time.',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe', 'Node.js', 'Express'],
+    technologies: ['React + Next.js', 'Tailwind CSS', 'Supabase', 'Node.js + Express'],
   },
   {
     name: '¿Cómo Se Dice?',
     description:
-      'A Spanish learning app that helps you learn Spanish words and phrases. Lorem ipsum dolor',
+      'A Spanish learning app that helps you learn Spanish words and phrases. Bring it out at Parties!',
     link: { href: '#', label: 'comosedice.com' },
     logo: logoOnboarding,
     technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB', 'Next.js'],
