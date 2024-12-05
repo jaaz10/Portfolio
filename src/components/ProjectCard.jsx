@@ -130,52 +130,88 @@ export function ProjectCard({ project }) {
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="fixed z-10 inset-0 overflow-y-auto">
         <div className="flex items-center justify-center min-h-screen p-4">
           <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-          <div className="relative bg-white dark:bg-zinc-800 rounded-lg w-full max-w-2xl mx-auto p-6">
-            <Dialog.Title className="text-xl font-bold text-zinc-800 dark:text-zinc-100">
+          <div className="relative bg-white dark:bg-zinc-800 rounded-lg w-full max-w-3xl mx-auto p-8">
+            <Dialog.Title className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
               {project.name}
             </Dialog.Title>
             
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Overview</h3>
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">Project Overview</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{readme.overview}</p>
             </div>
 
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Key Features</h3>
-              <ul className="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-400">
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">Problem & Solution</h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                This project addresses several key challenges in the {project.name === 'Clearing Vision' ? 'healthcare' : 
+                project.name === 'DogFoster' ? 'animal welfare' : 'education'} sector. Through innovative technology and 
+                user-centered design, we've created a solution that makes a real impact.
+              </p>
+            </div>
+
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">Key Features</h3>
+              <ul className="mt-2 space-y-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-400">
                 {readme.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
+                  <li key={index} className="leading-relaxed">{feature}</li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Installation</h3>
-              <code className="mt-2 block bg-zinc-100 dark:bg-zinc-900 p-2 rounded text-sm">
-                {readme.installation}
-              </code>
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">Technical Implementation</h3>
+              <div className="mt-2 space-y-4">
+                <div>
+                  <h4 className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Tech Stack:</h4>
+                  <div className="mt-1 flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-400/10 text-teal-500 dark:text-teal-400"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">Development Approach:</h4>
+                  <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                    Built with a focus on scalability and maintainability. Implemented using modern development practices 
+                    including CI/CD, automated testing, and comprehensive documentation.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Screenshots</h3>
-              <div className="grid grid-cols-2 gap-4 mt-2">
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">Project Screenshots</h3>
+              <div className="mt-4 grid grid-cols-2 gap-4">
                 {readme.screenshots.map((screenshot, index) => (
-                  <div key={index} className="relative h-40 bg-zinc-100 dark:bg-zinc-900 rounded overflow-hidden">
+                  <div key={index} className="relative h-48 bg-zinc-100 dark:bg-zinc-900 rounded-lg overflow-hidden">
                     <img
                       src={project.screenshot}
                       alt={screenshot}
                       className="w-full h-full object-cover"
                     />
-                    <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-xs p-1">
-                      {screenshot}
-                    </p>
+                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2">
+                      <p className="text-white text-sm">{screenshot}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">Future Enhancements</h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                Planned updates include enhanced user analytics, additional integration options, and expanded feature set 
+                based on user feedback and market demands.
+              </p>
+            </div>
+
             <button
-              className="mt-6 text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+              className="mt-8 text-sm text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
               onClick={() => setIsOpen(false)}
             >
               Close
