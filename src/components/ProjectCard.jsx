@@ -34,7 +34,7 @@ export function ProjectCard({ project }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {project.link.label} →
+            {project.link.href !== '#' ? 'View live project →' : 'Coming soon →'}
           </a>
         </div>
       )}
