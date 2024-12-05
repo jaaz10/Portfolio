@@ -42,8 +42,8 @@ import { TechStack } from '@/components/TechStack'
 
 const projects = [
   {
-    name: 'Clearing Vision Website',
-    description: 'A professional website for a Chicago-based optician serving the Clearing area since 2010.',
+    name: 'Clearing Vision ',
+    description: 'A website for a Chicago-based optician serving the Clearing area since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
