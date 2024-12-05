@@ -47,10 +47,22 @@ export function TechStack() {
     }
   ]
 
-  const getRandomPosition = () => {
-    const min = 20
-    const max = 280
-    return min + Math.random() * (max - min)
+  // Helper function to get edge positions
+  const getEdgePosition = () => {
+    const positions = [
+      [20, Math.random() * 280],  // Left edge
+      [280, Math.random() * 280], // Right edge
+      [Math.random() * 280, 20],  // Top edge
+      [Math.random() * 280, 280]  // Bottom edge
+    ]
+    return positions[Math.floor(Math.random() * positions.length)]
+  }
+
+  // Get a mix of edge and random positions
+  const getMixedPosition = () => {
+    return Math.random() > 0.5 ? 
+      getEdgePosition() : 
+      [20 + Math.random() * 260, 20 + Math.random() * 260]
   }
 
   return (
@@ -61,56 +73,51 @@ export function TechStack() {
       </h2>
       <div className="relative aspect-square w-full max-w-[350px] mx-auto mt-6 rounded-lg">
         <div className="relative w-full h-full">
-          {technologies.map((tech) => (
-            <motion.div
-              key={tech.technology}
-              className="absolute text-3xl cursor-pointer group backdrop-blur-[1px] drop-shadow-lg"
-              style={{ 
-                color: tech.color,
-                zIndex: Math.random() * 10  // Random z-index for natural layering
-              }}
-              initial={{
-                x: getRandomPosition(),
-                y: getRandomPosition(),
-              }}
-              animate={{
-                x: [
-                  getRandomPosition(),
-                  getRandomPosition(),
-                  getRandomPosition(),
-                  getRandomPosition(),
-                ],
-                y: [
-                  getRandomPosition(),
-                  getRandomPosition(),
-                  getRandomPosition(),
-                  getRandomPosition(),
-                ],
-                zIndex: [1, 2, 1, 2]  // Animate z-index to change layering
-              }}
-              transition={{
-                duration: 8 + Math.random() * 4,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "linear",
-                zIndex: {
-                  duration: 0,
-                  delay: Math.random() * 5  // Random delay for z-index changes
-                }
-              }}
-              whileHover={{
-                scale: 1.2,
-                filter: 'brightness(1.2)',
-                zIndex: 10,  // Bring hovered icon to front
-                transition: { duration: 0.2 }
-              }}
-            >
-              <span className="absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs whitespace-nowrap bg-white/80 dark:bg-zinc-800/80 px-2 py-1 rounded">
-                {tech.technology}
-              </span>
-              {tech.icon}
-            </motion.div>
-          ))}
+          {technologies.map((tech) => {
+            const [startX, startY] = getMixedPosition()
+            const positions = Array(4).fill(null).map(() => getMixedPosition())
+            
+            return (
+              <motion.div
+                key={tech.technology}
+                className="absolute text-3xl cursor-pointer group backdrop-blur-[1px] drop-shadow-lg"
+                style={{ 
+                  color: tech.color,
+                  zIndex: Math.random() * 10
+                }}
+                initial={{
+                  x: startX,
+                  y: startY,
+                }}
+                animate={{
+                  x: positions.map(p => p[0]),
+                  y: positions.map(p => p[1]),
+                  zIndex: [1, 2, 1, 2]
+                }}
+                transition={{
+                  duration: 8 + Math.random() * 4,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                  zIndex: {
+                    duration: 0,
+                    delay: Math.random() * 5
+                  }
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  filter: 'brightness(1.2)',
+                  zIndex: 10,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs whitespace-nowrap bg-white/80 dark:bg-zinc-800/80 px-2 py-1 rounded">
+                  {tech.technology}
+                </span>
+                {tech.icon}
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </div>
