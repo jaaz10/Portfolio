@@ -42,23 +42,24 @@ import { TechStack } from '@/components/TechStack'
 
 const projects = [
   {
-    name: 'Clearing Vision ',
-    description: 'A professional website for an optician serving the metropolitan area since 2010. ',
+    name: 'Clearing Vision',
+    description: 'An innovative website designed for a Chicago-based optician, providing seamless online appointment scheduling and a comprehensive lens catalog since 2010.',
     link: { href: 'https://clearingvision.com/', label: 'clearingvision.com' },
     logo: logoOptician,
     technologies: ['WordPress', 'Custom WP Plugins', 'PHP', 'MySQL'],
   },
   {
     name: 'DogFoster',
-    description:'Connecting pups with foster homes and forever families one pup at a time. Transport provided.',
+    description:
+      'A platform dedicated to connecting dogs with loving foster homes and permanent families, ensuring every pup finds a safe and caring environment.',
     link: { href: '#', label: 'dogfoster.org' },
     logo: logoRescue,
-    technologies: ['React + Next.js', 'Tailwind CSS', 'Supabase', 'Node.js + Express','Figma'],
+    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Stripe', 'Node.js', 'Express'],
   },
   {
     name: '¿Cómo Se Dice?',
     description:
-      'A Spanish learning app that helps you learn Spanish words and phrases. Bring it out at parties!',
+      'An engaging Spanish learning application that facilitates the acquisition of vocabulary and phrases through interactive lessons and quizzes.',
     link: { href: '#', label: 'comosedice.com' },
     logo: logoOnboarding,
     technologies: ['React Native + Expo', 'Node.js + Express', 'MongoDB', 'Next.js'],
@@ -303,11 +304,10 @@ export default async function Home() {
                 // event="SysConf 2021"
                 // cta="../images/avatar.jpg"
               />
-              <Image
+              <img
                 src="https://i.ibb.co/5ndy8N2/earth-8882368-640.jpg"
-                alt="Modern developer workspace setup"
-                width={500}
-                height={300}
+                alt="Image description"
+                h
                 className="!mb-0 !mt-[32px] rounded-[16px]"
               />
               {/*<p className="items-right !mt-2 flex justify-end text-sm text-[#A1A1AA]">
